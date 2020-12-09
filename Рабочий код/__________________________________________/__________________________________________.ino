@@ -60,9 +60,9 @@ void loop() {
     if (sonar.ping_cm() <= 30) {
       sped=sonar.ping_cm();
     }
-    else
+    else if(sonar.ping_cm()>=MAX_DISTANCE){
     sped= 255;
-
+    }
     switch (val_move) {
       case '0':
         go_forward(0);
